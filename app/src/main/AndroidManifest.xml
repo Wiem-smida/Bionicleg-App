@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="com.samsung.android.sdk.health.permission.READ" />
+    <uses-permission android:name="com.samsung.android.sdk.health.permission.WRITE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bionic_Leg"
+        tools:targetApi="31">
+        <!--
+     <activity
+         android:name=".BluetoothActivity"
+         android:exported="false" />
+           -->
+     <activity
+         android:name=".HealthActivity"
+         android:exported="false" />
+
+
+     <activity
+         android:name=".PreferencesActivity"
+         android:exported="false" />
+
+        <activity
+            android:name=".BatterieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeviceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActiivty"
+            android:exported="false" />
+        <activity
+            android:name=".pages"
+            android:exported="false" />
+        <activity
+            android:name=".CardViewBionicLeg"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".BluetoothActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Ajoutez les métadonnées pour les permissions Samsung Health -->
+        <meta-data
+            android:name="com.samsung.android.health.permission.read"
+            android:value="com.samsung.health.exercise;com.samsung.shealth.step_daily_trend" />
+        <meta-data
+            android:name="com.samsung.android.health.permission.write"
+            android:value="com.samsung.health.exercise" />
+    </application>
+
+</manifest>
